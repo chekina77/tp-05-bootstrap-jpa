@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Projet de départ du TP 05 — demo-data-access
 
 L'état du projet à la fin du TP 04 : la couche JDBC complète du chapitre 1. Partez de ce dossier
@@ -27,3 +28,7 @@ génère s'affichera dès le TP 05.
    `mvn -q exec:java -Dexec.mainClass=org.sebsy.compta.app.EssaiFournisseurs` affiche les
    fournisseurs et laisse la base comme il l'a trouvée.
 4. Un commit : « Reprendre le projet de départ du TP 05 ».
+=======
+# tp-05-bootstrap-jpa
+TP 4
+>>>>>>> cd25a412ed175aad7a47d7838983c334edcfff71

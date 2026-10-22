@@ -25,4 +25,5 @@ public final class MesureGraphe {
                 N, total / 1_000_000, total / 1_000 / N);
         Db.close();
     }
+
 }

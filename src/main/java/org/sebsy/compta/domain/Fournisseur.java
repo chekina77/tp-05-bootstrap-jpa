@@ -1,5 +1,7 @@
 package org.sebsy.compta.domain;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
 /**
@@ -9,10 +11,15 @@ import java.util.Objects;
  * The identifier is a {@code Long}: an unsaved supplier has none, which a {@code long} cannot
  * express.
  */
+@Entity
+@Table(name = "fournisseur")
 public class Fournisseur {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nom;
+    @Embedded
     private Adresse adresse;
 
     protected Fournisseur() {
@@ -27,6 +34,12 @@ public class Fournisseur {
     /** A supplier read from the database, identifier known. */
     public Fournisseur(Long id, String nom, Adresse adresse) {
         this(nom, adresse);
+        this.id = id;
+    }
+
+
+
+    public void setId(Long id1) {
         this.id = id;
     }
 

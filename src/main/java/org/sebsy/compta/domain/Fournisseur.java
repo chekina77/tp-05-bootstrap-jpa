@@ -1,3 +1,4 @@
+
 package org.sebsy.compta.domain;
 
 import jakarta.persistence.*;
@@ -18,9 +19,28 @@ public class Fournisseur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, length = 60, unique = true)
     private String nom;
+
+
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(
+                    name = "rue",
+                    column = @Column(name = "rue", length = 120)
+            ),
+            @AttributeOverride(
+                    name = "codePostal",
+                    column = @Column(name = "code_postal", length = 10)
+            ),
+            @AttributeOverride(
+                    name = "ville",
+                    column = @Column(name = "ville", nullable = false, length = 60)
+            )
+    })
     private Adresse adresse;
+
 
     protected Fournisseur() {
     }
@@ -37,9 +57,7 @@ public class Fournisseur {
         this.id = id;
     }
 
-
-
-    public void setId(Long id1) {
+    public void setId(Long id) {
         this.id = id;
     }
 
